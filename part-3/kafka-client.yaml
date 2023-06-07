@@ -24,17 +24,17 @@ spec:
         - name: CA_CRT
           valueFrom:
             secretKeyRef:
-              name: my-tls-cluster-cluster-ca-cert
+              name: my-kafka-cluster-cluster-ca-cert
               key: ca.crt
         - name: USER_CRT
           valueFrom:
             secretKeyRef:
-              name: my-user
+              name: kafka-tls-client-credentials
               key: user.crt
         - name: USER_KEY
           valueFrom:
             secretKeyRef:
-              name: my-user
+              name: kafka-tls-client-credentials
               key: user.key
       affinity:
         podAntiAffinity:
